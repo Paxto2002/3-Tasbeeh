@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("Tasbeeh.jpg");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.502);
+  background-blend-mode: darken;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  height: 100vh;
+}
+.container {
+  margin: auto;
+  border: .8em solid #ffffff;
+  border-radius: 3em;
+  width: 80%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+  ". text ."
+  "btns btns btns";
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  width: 100%;
+  grid-area: text;
+}
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: clamp(2.2rem, 5.5vw, 4rem);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+}
+
+button {
+  border: none;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  font-weight: 900;
+  width: 80%;
+  border-radius: 0.5em;
+  font-size: clamp(
+    1.1rem,
+    2.4vw,
+    1.7rem
+    ); 
+    padding: 1em;   
+}
+
+#increment-btn {
+  background: #175034;
+  margin: auto
+}
+
+#increment-btn:hover {
+  background: #13271d;
+}
+#reset-btn {
+  background: #1d264e;
+  margin: auto
+}
+#reset-btn:hover {
+  background: #080d25;
+}
+
+
+.buttons {
+  grid-area: btns;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 2em;
+  display: grid;
+  grid-gap: .5em;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "increment"
+    "reset";
+  }
+#increment-btn,
+#reset-btn {
+  padding: 1em 2em;
+  transition: all 0.3s;
+}
+
+#increment-btn {
+  transition: all 0.3s;
+  grid-area: increment;
+}
+#reset-btn {
+  grid-area: reset;
+}
+
+
+@media (min-width: 500px) {
+  
+  .buttons {
+
+    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-areas:     ". reset1 increment1 .";
+    grid-gap: 1em;
+  }
+  #increment-btn {
+    grid-area: increment1;
+    width: 165px;
+  }
+
+  #reset-btn {
+    grid-area: reset1;
+    width: 165px;
+  }
+}
